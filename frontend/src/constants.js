@@ -30,12 +30,12 @@ export const IOC_TYPE_META = Object.freeze({
 
 // Threat level metadata (partagé Dashboard + ThreatReport + PDF export)
 export const THREAT_META = Object.freeze({
-  critical: { color: "#ef4444", label: "CRITIQUE", bg: "rgba(239,68,68,0.07)",  border: "rgba(239,68,68,0.25)"  },
-  high:     { color: "#f97316", label: "ÉLEVÉ",    bg: "rgba(249,115,22,0.07)", border: "rgba(249,115,22,0.25)" },
-  medium:   { color: "#eab308", label: "MOYEN",    bg: "rgba(234,179,8,0.07)",  border: "rgba(234,179,8,0.25)"  },
-  low:      { color: "#22c55e", label: "FAIBLE",   bg: "rgba(34,197,94,0.07)",  border: "rgba(34,197,94,0.25)"  },
-  malicious:{ color: "#ef4444", label: "MALICIEUX",bg: "rgba(239,68,68,0.07)",  border: "rgba(239,68,68,0.25)"  },
-  clean:    { color: "#22c55e", label: "PROPRE",   bg: "rgba(34,197,94,0.07)",  border: "rgba(34,197,94,0.25)"  },
+  critical: { color: "#ef4444", label: "CRITICAL", bg: "rgba(239,68,68,0.07)",  border: "rgba(239,68,68,0.25)"  },
+  high:     { color: "#f97316", label: "HIGH",    bg: "rgba(249,115,22,0.07)", border: "rgba(249,115,22,0.25)" },
+  medium:   { color: "#eab308", label: "MEDIAN",    bg: "rgba(234,179,8,0.07)",  border: "rgba(234,179,8,0.25)"  },
+  low:      { color: "#22c55e", label: "LOW",   bg: "rgba(34,197,94,0.07)",  border: "rgba(34,197,94,0.25)"  },
+  malicious:{ color: "#ef4444", label: "MALICIOUS",bg: "rgba(239,68,68,0.07)",  border: "rgba(239,68,68,0.25)"  },
+  clean:    { color: "#22c55e", label: "CLEAN",   bg: "rgba(34,197,94,0.07)",  border: "rgba(34,197,94,0.25)"  },
 });
 
 // Helpers

@@ -15,12 +15,12 @@ export default function ForgotPasswordModal({ onClose }) {
       darkMode={true}
       accentColor={G}
       titleIcon="🔑"
-      title="MOT DE PASSE OUBLIÉ"
+      title="FORGOT PASSWORD"
       maxWidth="380px"
       zIndex={50}
     >
       <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.3)", fontFamily: "'DM Mono', monospace", lineHeight: 1.6, marginBottom: "24px" }}>
-        {sent ? "Demande envoyée. L'administrateur vous contactera." : "Entrez votre email. L'administrateur vous enverra votre nouveau mot de passe."}
+        {sent ? "Request sent. The administrator will contact you." : "Enter your email. The administrator will send you your new password."}
       </div>
 
       {!sent ? (
@@ -31,7 +31,7 @@ export default function ForgotPasswordModal({ onClose }) {
             placeholder="analyst@socilis.com"
           />
           <Button variant="green" fullWidth onClick={handleReset} loading={loading}>
-            ENVOYER LA DEMANDE
+            SEND REQUEST
           </Button>
           {error && (
             <div style={{ marginTop: "10px", color: "#ff8080", fontFamily: "'DM Mono', monospace", fontSize: "0.72rem" }}>
@@ -43,10 +43,10 @@ export default function ForgotPasswordModal({ onClose }) {
         <>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 16px", marginBottom: "20px", background: "rgba(127,216,50,0.05)", border: "1px solid rgba(127,216,50,0.2)", borderRadius: "6px" }}>
             <span style={{ color: G }}>✓</span>
-            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.75rem", color: G }}>Email envoyé avec succès</span>
+            <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.75rem", color: G }}>Email sent successfully</span>
           </div>
           <Button variant="green" fullWidth onClick={onClose}>
-            FERMER
+            CLOSE
           </Button>
         </>
       )}

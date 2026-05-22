@@ -1,11 +1,11 @@
 import { THREAT_META, IOC_TYPE_META } from "../../constants";
 
 const FILTERS = [
-  { key: "all",      label: "TOUS"     },
-  { key: "critical", label: "CRITIQUE" },
-  { key: "high",     label: "ÉLEVÉ"    },
-  { key: "medium",   label: "MOYEN"    },
-  { key: "low",      label: "FAIBLE"   },
+  { key: "all",      label: "ALL"     },
+  { key: "critical", label: "CRITICAL" },
+  { key: "high",     label: "HIGHT"    },
+  { key: "medium",   label: "MEDIUM"    },
+  { key: "low",      label: "LOW"   },
   { key: "ip",       label: "IP"       },
   { key: "hash",     label: "HASH"     },
   { key: "domain",   label: "DOMAIN"   },

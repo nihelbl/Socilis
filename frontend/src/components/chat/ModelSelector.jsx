@@ -2,8 +2,8 @@ import { useState, useRef, useEffect } from "react";
 import { t } from "./chatTheme";
 
 export const MODELS = [
-  { id: "phi3-mini",  label: "Phi-3 Mini",  desc: "Rapide · Léger"     },
-  { id: "gemma3",     label: "Gemma 3",      desc: "Équilibré · Précis" },
+  { id: "phi3-mini",  label: "Phi-3 Mini",  desc: "Fast · Lightweight"     },
+  { id: "gemma3",     label: "Gemma 3",      desc: "Balanced · Precise" },
 ];
 
 export default function ModelSelector({ darkMode, selectedModel, onSelect }) {

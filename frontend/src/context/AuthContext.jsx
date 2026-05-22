@@ -38,7 +38,7 @@ const login = useCallback((dataFromBackend) => {
   const user = {
     email:  email ?? "",
     role:   role === "superadmin" ? ROLES.ADMIN : ROLES.USER,
-    name:   email ? email.split("@")[0] : "Analyste SOC",
+    name:   email ? email.split("@")[0] : "SOC Analyste",
   };
   setUser(user);
   saveSession(user, access_token);

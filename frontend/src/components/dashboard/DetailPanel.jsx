@@ -22,7 +22,7 @@ function EmptyState({ C }) {
         <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
       </svg>
       <span style={{ fontFamily: "'DM Mono', monospace", fontSize: "0.6rem", letterSpacing: "0.2em", color: C.textFaint }}>
-        SÉLECTIONNER UN IOC
+        Select an IOC to see details
       </span>
     </div>
   );
@@ -66,7 +66,7 @@ export default function DetailPanel({ ioc, C }) {
       </div>
 
       <Field C={C} label="VERDICT"        value={(ioc.final_verdict || "UNKNOWN").toUpperCase()} color={scC} />
-      <Field C={C} label="DATE D'ANALYSE" value={ioc.created_at?.slice(0, 16)} />
+      <Field C={C} label="ANALYSIS DATE" value={ioc.created_at?.slice(0, 16)} />
 
     </div>
   );

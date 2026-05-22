@@ -13,10 +13,10 @@ export function useCreateForm(onDone) {
 
   const validate = () => {
     const e = {};
-    if (!form.name.trim())          e.name     = "Nom requis";
-    if (!form.pseudo.trim())        e.pseudo   = "Pseudo requis";
-    if (!validateEmail(form.email)) e.email    = "Email invalide";
-    if (form.password.length < 6)   e.password = "6 caractères minimum";
+    if (!form.name.trim())          e.name     = "Name is required";
+    if (!form.pseudo.trim())        e.pseudo   = "Username is required";
+    if (!validateEmail(form.email)) e.email    = "Invalid email";
+    if (form.password.length < 6)   e.password = "Minimum 6 characters";
     return e;
   };
 
@@ -30,7 +30,7 @@ export function useCreateForm(onDone) {
       setSuccess(true);
       setTimeout(onDone, 1400);
     } catch (err) {
-      setErrors({ email: err.message || "Erreur lors de la création" });
+      setErrors({ email: err.message || "Error occurred while creating the user" });
     }
   };
 
@@ -48,15 +48,15 @@ export function useDeleteForm(onDone) {
   const [submitting, setSubmitting] = useState(false); // ← verrou anti double-clic
 
   const nextStep = () => {
-    if (!pseudo.trim())        { setError("Pseudo requis"); return; }
-    if (!validateEmail(email)) { setError("Email invalide"); return; }
+    if (!pseudo.trim())        { setError("Username is required"); return; }
+    if (!validateEmail(email)) { setError("Invalid email"); return; }
     setError(""); setStep(2);
   };
 
   const back = () => { setStep(1); setConfirm(""); setError(""); };
 
   const submit = async () => {
-    if (confirm !== "SUPPRIMER") { setError('Tapez exactement "SUPPRIMER"'); return; }
+    if (confirm !== "DELETE") { setError('Type exactly "DELETE"'); return; }
     if (submitting) return; // bloque le double-clic
     setSubmitting(true);
 
@@ -64,14 +64,14 @@ export function useDeleteForm(onDone) {
       const users = await authApi.listUsers();
       const user  = users.find(u => u.email === email);
 
-      if (!user) { setError("Utilisateur introuvable"); return; }
-      if (user.role === "superadmin") { setError("Impossible de supprimer le superadmin"); return; }
+      if (!user) { setError("User not found"); return; }
+      if (user.role === "superadmin") { setError("Cannot delete the superadmin"); return; }
 
       await authApi.deleteUser(user.id);
       setSuccess(true);
       setTimeout(onDone, 1400);
     } catch (err) {
-      setError(err.message || "Erreur lors de la suppression");
+      setError(err.message || "Error occurred while deleting the user");
     } finally {
       setSubmitting(false);
     }

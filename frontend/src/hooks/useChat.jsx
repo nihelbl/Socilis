@@ -11,7 +11,7 @@ const nextId = () => ++_msgId;
 function makeInitMsg() {
   return {
     id: 1, role: "bot",
-    content: "Système SOCILIS initialisé. Soumettez un IOC (Hash, IP, URL, Domaine, Email ou CVE) pour analyse, ou posez une question en cybersécurité.",
+    content: "SOCILIS system initialized. Submit an IOC (Hash, IP, URL, Domain, Email, or CVE) for analysis, or ask a cybersecurity-related question.",
     timestamp: getTime(),
   };
 }

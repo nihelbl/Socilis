@@ -24,17 +24,17 @@ export default function ChatTopBar({
         <button onClick={onToggleSidebar} style={{ background:"transparent", border:"none", cursor:"pointer", padding:"6px", display:"flex", flexDirection:"column", gap:"4px", borderRadius:"5px" }}>
           {[0,1,2].map(i => <span key={i} style={{ display:"block", width:i===1?"12px":"16px", height:"1.5px", background:th.textMuted, borderRadius:"2px" }} />)}
         </button>
-        <span style={{ fontSize:"9px", color:th.textFaint, letterSpacing:"2px", fontFamily:"'JetBrains Mono',monospace" }}>SESSION ACTIVE</span>
+        <span style={{ fontSize:"9px", color:th.textFaint, letterSpacing:"2px", fontFamily:"'JetBrains Mono',monospace" }}>ACTIVE SESSION</span>
         <div style={{ flex:1 }} />
         <button onClick={onOpenSettings}
           style={{ display:"flex", alignItems:"center", gap:"6px", background:"transparent", border:`1px solid ${th.border}`, borderRadius:"6px", padding:"5px 12px", color:th.textMuted, fontSize:"9px", letterSpacing:"2px", cursor:"pointer", fontFamily:"'JetBrains Mono',monospace", transition:"all 0.2s" }}
           onMouseEnter={e=>{ e.currentTarget.style.borderColor=th.borderActive; e.currentTarget.style.color=th.accent; e.currentTarget.style.background=th.accentSubtle; }}
           onMouseLeave={e=>{ e.currentTarget.style.borderColor=th.border; e.currentTarget.style.color=th.textMuted; e.currentTarget.style.background="transparent"; }}
-        >⚙ PARAMÈTRES</button>
+        >⚙ PARAMETERS</button>
       </div>
 
       <div style={{ padding:"8px 14px", display:"flex", gap:"6px", flexWrap:"wrap", alignItems:"center" }}>
-        <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"8px", color:th.textFaint, letterSpacing:"2px", marginRight:"4px" }}>TYPE IOC :</span>
+        <span style={{ fontFamily:"'JetBrains Mono',monospace", fontSize:"8px", color:th.textFaint, letterSpacing:"2px", marginRight:"4px" }}>IOC TYPE:</span>
         {IOC_CHIPS.map(({ type, key, icon, color }) => {
           const isActive = activeIOC === key;
           return (

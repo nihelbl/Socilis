@@ -75,7 +75,7 @@ export default function ChatSidebar({ open, darkMode, selectedChat, onSelectChat
               onMouseEnter={e => e.currentTarget.style.background = th.accentSubtle}
               onMouseLeave={e => e.currentTarget.style.background = "transparent"}
             >
-              + NOUVELLE ANALYSE
+              + NEW ANALYSIS
             </button>
             <button
               onClick={() => navigate("/dashboard")}
@@ -96,7 +96,7 @@ export default function ChatSidebar({ open, darkMode, selectedChat, onSelectChat
             </button>
           </div>
 
-          {/* Recherche */}
+          {/* Search */}
           <div style={{ padding: "0 12px 10px" }}>
             <div
               style={{
@@ -113,7 +113,7 @@ export default function ChatSidebar({ open, darkMode, selectedChat, onSelectChat
                 type="text"
                 value={search}
                 onChange={e => setSearch(e.target.value)}
-                placeholder="Rechercher..."
+                placeholder="Search..."
                 style={{
                   flex: 1, background: "transparent", border: "none", outline: "none",
                   color: th.text, fontSize: "10px", letterSpacing: "0.5px",
@@ -137,21 +137,21 @@ export default function ChatSidebar({ open, darkMode, selectedChat, onSelectChat
               fontFamily: "'JetBrains Mono', monospace",
               display: "flex", justifyContent: "space-between", alignItems: "center",
             }}>
-              <span>HISTORIQUE</span>
+              <span>HISTORY</span>
               {search && (
                 <span style={{ color: th.accent, fontSize: "8px" }}>
-                  {filtered.length} résultat{filtered.length !== 1 ? "s" : ""}
+                  {filtered.length} result{filtered.length !== 1 ? "s" : ""}
                 </span>
               )}
             </div>
 
             {loading ? (
               <div style={{ padding: "20px 10px", textAlign: "center", fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", color: th.textFaint, letterSpacing: "1px" }}>
-                Chargement...
+                Loading...
               </div>
             ) : filtered.length === 0 ? (
               <div style={{ padding: "20px 10px", textAlign: "center", fontFamily: "'JetBrains Mono', monospace", fontSize: "10px", color: th.textFaint, letterSpacing: "1px" }}>
-                {history.length === 0 ? "Aucune analyse effectuée" : "Aucun résultat"}
+                {history.length === 0 ? "No analysis performed" : "No results found"}
               </div>
             ) : (
               filtered.map(item => {
@@ -183,7 +183,7 @@ export default function ChatSidebar({ open, darkMode, selectedChat, onSelectChat
                     {isHovered && (
                       <button
                         onClick={(e) => handleDelete(e, item.id)}
-                        title="Supprimer"
+                        title="Delete"
                         style={{
                           position: "absolute", top: "8px", right: "8px",
                           background: "transparent", border: "none", color: "#ef4444",

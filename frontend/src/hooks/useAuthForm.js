@@ -27,7 +27,7 @@ export function useAuthForm() {
       login(data); // AuthContext s'occupe de tout
       navigate("/chat");
     } catch (e) {
-      setError(e.message || "Identifiants incorrects");
+      setError(e.message || "Invalid credentials");
     } finally {
       setLoading(false);
     }
@@ -43,13 +43,13 @@ export function useForgotPassword() {
   const [error,   setError]   = useState("");
 
   const handleReset = async () => {
-    if (!email || !/\S+@\S+\.\S+/.test(email)) { setError("Email invalide."); return; }
+    if (!email || !/\S+@\S+\.\S+/.test(email)) { setError("Invalid email address"); return; }
     setError(""); setLoading(true);
     try {
       await authApi.forgotPassword(email);
       setSent(true);
     } catch (e) {
-      setError(e.message || "Erreur lors de l'envoi.");
+      setError(e.message || "Error sending reset email");
     } finally {
       setLoading(false);
     }

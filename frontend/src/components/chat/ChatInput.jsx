@@ -31,7 +31,7 @@ export default function ChatInput({ darkMode, input, loading, selectedModel, onM
             value={input} onChange={onInputChange} onKeyDown={onKeyDown}
             onFocus={() => setFocused(true)} onBlur={() => setFocused(false)}
             disabled={loading}
-            placeholder="Entrez un IOC (hash, IP, URL, domaine, CVE)..."
+            placeholder="Enter an IOC (hash, IP, URL, domain, Mail, CVE)..."
             style={{
               flex: 1, background: "transparent", border: "none", outline: "none",
               color: th.text, fontSize: "12px",
@@ -57,12 +57,12 @@ export default function ChatInput({ darkMode, input, loading, selectedModel, onM
             transition: "all 0.2s",
             boxShadow: canSend ? `0 0 12px ${th.accentGlow}` : "none",
             whiteSpace: "nowrap", flexShrink: 0,
-          }}>▶ ANALYSER</button>
+          }}>▶ ANALYZE </button>
         </div>
         <div style={{ display: "flex", alignItems: "center", paddingTop: "5px", paddingLeft: "18px", borderTop: `1px solid ${th.border}`, marginTop: "2px" }}>
           <ModelSelector darkMode={darkMode} selectedModel={selectedModel} onSelect={onModelChange} />
           <div style={{ flex: 1 }} />
-          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "8px", color: th.textFaint, letterSpacing: "1.5px" }}>↵ ENTRÉE POUR ENVOYER</span>
+          <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "8px", color: th.textFaint, letterSpacing: "1.5px" }}>↵ SEND </span>
         </div>
       </div>
     </div>

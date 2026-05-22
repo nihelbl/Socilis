@@ -16,7 +16,7 @@ export default function IOCList({ scans, filter, onFilter, selectedIOC, onSelect
 
       <div style={{ flex: 1, overflowY: "auto", padding: "10px 12px" }}>
         {filtered.length === 0
-          ? <div style={{ textAlign: "center", color: C.textFaint, fontSize: "0.6rem", letterSpacing: "0.2em", marginTop: "48px" }}>AUCUN IOC</div>
+          ? <div style={{ textAlign: "center", color: C.textFaint, fontSize: "0.6rem", letterSpacing: "0.2em", marginTop: "48px" }}>NO IOC FOUND</div>
           : filtered.map(ioc => (
               <IOCRow
                 key={ioc.id}

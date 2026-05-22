@@ -18,7 +18,7 @@ export default function TypingIndicator({ darkMode }) {
         borderRadius: "10px 10px 10px 2px", padding: "12px 18px",
         display: "flex", alignItems: "center", gap: "10px",
       }}>
-        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "10px", color: "#4ade80", letterSpacing: "2px" }}>Analyse en cours</span>
+        <span style={{ fontFamily: "'JetBrains Mono',monospace", fontSize: "10px", color: "#4ade80", letterSpacing: "2px" }}>Analysis in progress...</span>
         <span style={{ display: "flex", gap: "4px", alignItems: "center" }}>
           {[0,1,2].map(i => (
             <span key={i} style={{

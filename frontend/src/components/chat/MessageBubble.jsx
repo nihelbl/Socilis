@@ -93,26 +93,26 @@ function ReportCard({ report, darkMode }) {
 
       {/* IP */}
       {report.type === "ip" && (<>
-        <Section title="INFORMATIONS RÉSEAU">
+        <Section title="NETWORK INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
             <Field label="ISP"  value={report.isp  || "N/A"}/>
             <Field label="ASN"  value={report.asn  || "N/A"}/>
-            <Field label="PAYS" value={report.country || "N/A"}/>
+            <Field label="COUNTRY" value={report.country || "N/A"}/>
           </div>
         </Section>
-        <Section title="RÉPUTATION">
+        <Section title="REPUTATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
             <Field label="VT MALICIOUS"    value={report.vt_malicious  ?? 0} color={report.vt_malicious  > 0 ? "#ef4444" : "#22c55e"}/>
             <Field label="VT SUSPICIOUS"   value={report.vt_suspicious ?? 0} color={report.vt_suspicious > 0 ? "#eab308" : "#22c55e"}/>
             <Field label="ABUSEIPDB SCORE" value={report.abuseipdb     ?? 0} color={report.abuseipdb     > 0 ? "#f97316" : "#22c55e"}/>
             <Field label="OTX PULSES"      value={report.otx_pulses    ?? 0}/>
             {report.vt_reputation != null && (
-              <Field label="VT RÉPUTATION" value={report.vt_reputation} color={report.vt_reputation < 0 ? "#ef4444" : "#22c55e"}/>
+              <Field label="VT REPUTATION" value={report.vt_reputation} color={report.vt_reputation < 0 ? "#ef4444" : "#22c55e"}/>
             )}
           </div>
         </Section>
         {(report.vt_tags||[]).length > 0 && (
-          <Section title="TAGS VIRUSTOTAL">
+          <Section title="VIRUSTOTAL TAGS">
             <div style={{ display:"flex", flexWrap:"wrap", gap:"5px" }}>
               {report.vt_tags.map(tag => (
                 <span key={tag} style={{ padding:"2px 9px", background:"rgba(0,212,255,0.07)", border:"1px solid rgba(0,212,255,0.2)", borderRadius:"3px", color:"#00d4ff", fontSize:"9px" }}>{tag}</span>
@@ -121,14 +121,14 @@ function ReportCard({ report, darkMode }) {
           </Section>
         )}
         {(report.associated_domains||[]).length > 0 && (
-          <Section title="DOMAINES ASSOCIÉS">
+          <Section title="ASSOCIATED DOMAINS">
             {report.associated_domains.map(d => (
               <div key={d} style={{ fontSize:"10px", color:"#fb923c", marginBottom:"3px" }}>→ {d}</div>
             ))}
           </Section>
         )}
         {(report.associated_files||[]).length > 0 && (
-          <Section title="FICHIERS ASSOCIÉS">
+          <Section title="ASSOCIATED FILES">
             {report.associated_files.map(f => (
               <div key={f} style={{ fontSize:"9px", color:th.textMuted, marginBottom:"3px", wordBreak:"break-all", fontFamily:"monospace" }}>{f}</div>
             ))}
@@ -138,13 +138,13 @@ function ReportCard({ report, darkMode }) {
 
       {/* HASH */}
       {report.type === "hash" && (<>
-        <Section title="INFORMATIONS FICHIER">
+        <Section title="FILE INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
-            <Field label="TYPE FICHIER" value={report.file_type  || "N/A"}/>
-            <Field label="PREMIER VU"   value={report.first_seen || "N/A"}/>
+            <Field label="FILE TYPE" value={report.file_type  || "N/A"}/>
+            <Field label="FIRST SEEN"   value={report.first_seen || "N/A"}/>
           </div>
         </Section>
-        <Section title="DÉTECTIONS">
+        <Section title="DETECTIONS">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
             <Field label="VT MALICIOUS"  value={report.vt_malicious  ?? 0} color={report.vt_malicious  > 0 ? "#ef4444" : "#22c55e"}/>
             <Field label="VT UNDETECTED" value={report.vt_undetected ?? 0}/>
@@ -168,31 +168,31 @@ function ReportCard({ report, darkMode }) {
 
       {/* DOMAIN */}
       {report.type === "domain" && (<>
-        <Section title="INFORMATIONS DOMAINE">
+        <Section title="DOMAIN INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
             <Field label="IP"            value={report.ip_domain        || "N/A"}/>
             <Field label="REGISTRAR"     value={report.registrar        || "N/A"}/>
-            <Field label="DATE CRÉATION" value={report.created          || "N/A"}/>
-            <Field label="SOUS-DOMAINES" value={report.subdomains_count ?? "N/A"}/>
+            <Field label="CREATION DATE" value={report.created          || "N/A"}/>
+            <Field label="SUBDOMAINS" value={report.subdomains_count ?? "N/A"}/>
           </div>
         </Section>
-        <Section title="DÉTECTIONS">
+        <Section title="DETECTIONS">
           <Field label="VT MALICIOUS" value={report.vt_malicious ?? 0} color={report.vt_malicious > 0 ? "#ef4444" : "#22c55e"}/>
         </Section>
       </>)}
 
       {/* URL */}
       {report.type === "url" && (<>
-        <Section title="INFORMATIONS URL">
+        <Section title="URL INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
-            <Field label="DOMAINE" value={report.domain || "N/A"}/>
+            <Field label="DOMAIN" value={report.domain || "N/A"}/>
             <Field label="IP"      value={report.ip     || "N/A"}/>
             {report.hosting_platform && (
-              <Field label="PLATEFORME HOSTING" value={report.hosting_platform} color="#fb923c"/>
+              <Field label="HOSTING PLATFORM" value={report.hosting_platform} color="#fb923c"/>
             )}
           </div>
         </Section>
-        <Section title="DÉTECTIONS">
+        <Section title="DETECTIONS">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
             <Field label="VT MALICIOUS"  value={report.vt_malicious  ?? 0} color={report.vt_malicious  > 0 ? "#ef4444" : "#22c55e"}/>
             <Field label="VT SUSPICIOUS" value={report.vt_suspicious ?? 0} color={report.vt_suspicious > 0 ? "#eab308" : "#22c55e"}/>
@@ -204,9 +204,9 @@ function ReportCard({ report, darkMode }) {
 
       {/* MAIL */}
       {report.type === "mail" && (<>
-        <Section title="INFORMATIONS EMAIL">
+        <Section title="MAIL INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
-            <Field label="DOMAINE"  value={report.mail_domain || "N/A"}/>
+            <Field label="DOMAIN"  value={report.mail_domain || "N/A"}/>
             <Field label="PROVIDER" value={report.provider    || "N/A"}/>
           </div>
         </Section>
@@ -235,11 +235,11 @@ function ReportCard({ report, darkMode }) {
 
       {/* CVE */}
       {report.type === "cve" && (
-        <Section title="INFORMATIONS CVE">
+        <Section title="CVE INFORMATION">
           <div style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"8px" }}>
-            <Field label="SÉVÉRITÉ"   value={report.severity   || "N/A"} color="#ef4444"/>
+            <Field label="SEVERITY"   value={report.severity   || "N/A"} color="#ef4444"/>
             <Field label="CVSS SCORE" value={report.cvss_score ?? "N/A"} color={report.cvss_score>=9?"#ef4444":report.cvss_score>=7?"#f97316":"#eab308"}/>
-            <Field label="PUBLIÉ LE"  value={report.published  || "N/A"}/>
+            <Field label="PUBLISHED ON"  value={report.published  || "N/A"}/>
             {(report.cwe||[]).length > 0 && <Field label="CWE" value={report.cwe.join(", ")}/>}
           </div>
           {report.cvss_vector && <Field label="CVSS VECTOR" value={report.cvss_vector} mono/>}

@@ -1,10 +1,10 @@
 import { memo } from "react";
 
 const VERDICT_MAP = {
-  malicious:  { bg: "rgba(248,113,113,0.1)",  border: "#f87171", text: "#fca5a5", label: "⚠ MALICIEUX" },
-  clean:      { bg: "rgba(74,222,128,0.1)",   border: "#4ade80", text: "#86efac", label: "✓ PROPRE"    },
-  suspicious: { bg: "rgba(251,146,60,0.1)",   border: "#fb923c", text: "#fdba74", label: "⚡ SUSPECT"  },
-  critical:   { bg: "rgba(239,68,68,0.12)",   border: "#ef4444", text: "#fca5a5", label: "🔴 CRITIQUE" },
+  malicious:  { bg: "rgba(248,113,113,0.1)",  border: "#f87171", text: "#fca5a5", label: "⚠ MALICIOUS" },
+  clean:      { bg: "rgba(74,222,128,0.1)",   border: "#4ade80", text: "#86efac", label: "✓ CLEAN"    },
+  suspicious: { bg: "rgba(251,146,60,0.1)",   border: "#fb923c", text: "#fdba74", label: "⚡ SUSPICIOUS"  },
+  critical:   { bg: "rgba(239,68,68,0.12)",   border: "#ef4444", text: "#fca5a5", label: "🔴 CRITICAL" },
 };
 
 const VerdictBadge = memo(function VerdictBadge({ verdict }) {

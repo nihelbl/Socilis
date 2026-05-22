@@ -74,7 +74,7 @@ export default function Auth() {
             onMouseEnter={e => e.currentTarget.style.color = G}
             onMouseLeave={e => e.currentTarget.style.color = "rgba(127,216,50,0.45)"}
           >
-            Mot de passe oublié ?
+            FORGOT PASSWORD?
           </button>
         </div>
 
